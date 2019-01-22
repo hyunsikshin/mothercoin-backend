@@ -1,0 +1,16 @@
+type Mother {
+  id: Int!
+  pubkey: String!
+  domain: String!
+  email: String!
+}
+
+type Query {
+  mother: [Mother]!
+  domain(domain: String!): Mother
+  verify(pubkey: String!): Mother
+}
+
+type Mutation {
+  addDomain(pubkey: String!, domain: String!, email: String!): Mother!
+}
