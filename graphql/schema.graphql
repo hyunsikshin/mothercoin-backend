@@ -1,4 +1,4 @@
-type Mother {
+type User {
   id: Int!
   pubkey: String!
   domain: String!
@@ -6,11 +6,10 @@ type Mother {
 }
 
 type Query {
-  mother: [Mother]!
-  domain(domain: String!): Mother
-  verify(pubkey: String!): Mother
+  users: [User]!
+  user(domain: String, pubkey: String, email: String, type: String!): User
 }
 
 type Mutation {
-  addDomain(pubkey: String!, domain: String!, email: String!): Mother!
+  addUser(pubkey: String!, domain: String!, email: String!): User!
 }

@@ -19,19 +19,32 @@ let data = [
   },
 ];
 
-export const getAll = () => data;
+export const getUsers = () => data;
 
-export const getDomain = domain => {
-  const result = data.filter(user => user.domain === domain);
-  return result[0];
+export const getUser = (domain, pubkey, email, type) => {
+  switch (type) {
+    case 'domain':
+      const resultD = data.filter(user => user.domain === domain);
+      return resultD[0];
+      break;
+
+    case 'pubkey':
+      const resultP = data.filter(user => user.pubkey === pubkey);
+      return resultP[0];
+      break;
+
+    case 'email':
+      const resultE = data.filter(user => user.email === email);
+      return resultE[0];
+      break;
+
+    default:
+      return null;
+      break;
+  }
 };
 
-export const getKey = pubkey => {
-  const result = data.filter(user => user.pubkey === pubkey);
-  return result[0];
-};
-
-export const addData = (pubkey, domain, email) => {
+export const addUser = (pubkey, domain, email) => {
   const newData = {
     id: `${data.length}`,
     pubkey,
