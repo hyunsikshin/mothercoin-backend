@@ -13,7 +13,7 @@ let data = [
   },
   {
     id: 2,
-    pubaddresskey: 'gustlrtlr',
+    address: 'gustlrtlr',
     domain: 'xnxic',
     email: 'xnxic@gmail.com',
   },
