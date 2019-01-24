@@ -1,15 +1,15 @@
 type User {
   id: Int!
-  pubkey: String!
+  address: String!
   domain: String!
   email: String!
 }
 
 type Query {
   users: [User]!
-  user(domain: String, pubkey: String, email: String, type: String!): User
+  user(domain: String, address: String, email: String, type: String!): User
 }
 
 type Mutation {
-  addUser(pubkey: String!, domain: String!, email: String!): User!
+  addUser(address: String!, domain: String!, email: String!): User!
 }

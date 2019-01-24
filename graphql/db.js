@@ -1,19 +1,19 @@
 let data = [
   {
     id: 0,
-    pubkey: 'gustlrwkdwkd',
+    address: 'gustlrwkdwkd',
     domain: 'hyunsik',
     email: 'hyunsik@gmail.com',
   },
   {
     id: 1,
-    pubkey: 'gustlr',
+    address: 'gustlr',
     domain: 'xnxic',
     email: 'xnxic@gmail.com',
   },
   {
     id: 2,
-    pubkey: 'gustlrtlr',
+    pubaddresskey: 'gustlrtlr',
     domain: 'xnxic',
     email: 'xnxic@gmail.com',
   },
@@ -21,15 +21,15 @@ let data = [
 
 export const getUsers = () => data;
 
-export const getUser = (domain, pubkey, email, type) => {
+export const getUser = (domain, address, email, type) => {
   switch (type) {
     case 'domain':
       const resultD = data.filter(user => user.domain === domain);
       return resultD[0];
       break;
 
-    case 'pubkey':
-      const resultP = data.filter(user => user.pubkey === pubkey);
+    case 'address':
+      const resultP = data.filter(user => user.address === address);
       return resultP[0];
       break;
 
@@ -44,10 +44,10 @@ export const getUser = (domain, pubkey, email, type) => {
   }
 };
 
-export const addUser = (pubkey, domain, email) => {
+export const addUser = (address, domain, email) => {
   const newData = {
     id: `${data.length}`,
-    pubkey,
+    address,
     domain,
     email,
   };
