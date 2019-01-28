@@ -1,21 +1,9 @@
 let data = [
   {
     id: 0,
-    address: 'gustlrwkdwkd',
+    address: 'error',
     domain: 'hyunsik',
     email: 'hyunsik@gmail.com',
-  },
-  {
-    id: 1,
-    address: 'gustlr',
-    domain: 'xnxic',
-    email: 'xnxic@gmail.com',
-  },
-  {
-    id: 2,
-    address: 'gustlrtlr',
-    domain: 'xnxic',
-    email: 'xnxic@gmail.com',
   },
 ];
 
