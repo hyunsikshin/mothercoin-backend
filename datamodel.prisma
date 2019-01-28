@@ -1,0 +1,6 @@
+type User {
+  id: ID! @unique
+  address: String! @unique
+  domain: String! @unique
+  email: String! @unique
+}

@@ -1,13 +1,31 @@
-import { getUsers, getUser, addUser } from './db';
+import { prisma } from '../generated/prisma-client';
 
 const resolvers = {
   Query: {
-    users: () => getUsers(), // 모든 정보 다 가져오기
-    user: (_, { domain, address, email, type }) =>
-      getUser(domain, address, email, type),
+    users(root, args, context) {
+      return context.prisma.users();
+    },
+    user(root, args, context) {
+      switch (args.type) {
+        case 'domain':
+          return context.prisma.user({ domain: args.domain });
+        case 'address':
+          return context.prisma.user({ address: args.address });
+        case 'email':
+          return context.prisma.user({ address: args.email });
+        default:
+          return null;
+      }
+    },
   },
   Mutation: {
-    addUser: (_, { address, domain, email }) => addUser(address, domain, email),
+    createUser(root, args, context) {
+      return context.prisma.createUser({
+        domain: args.domain,
+        email: args.email,
+        address: args.address,
+      });
+    },
   },
 };
 

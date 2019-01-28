@@ -1,5 +1,5 @@
 type User {
-  id: Int!
+  id: ID!
   address: String!
   domain: String!
   email: String!
@@ -11,5 +11,5 @@ type Query {
 }
 
 type Mutation {
-  addUser(address: String!, domain: String!, email: String!): User!
+  createUser(address: String!, domain: String!, email: String!): User!
 }

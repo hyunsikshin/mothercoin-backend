@@ -9,10 +9,12 @@
   "dependencies": {
     "axios": "^0.18.0",
     "graphql-yoga": "^1.16.9",
-    "node-fetch": "^2.3.0"
+    "node-fetch": "^2.3.0",
+    "prisma-client-lib": "^1.25.3"
   },
   "scripts": {
-    "start": "nodemon --exec babel-node index.js"
+    "start": "nodemon --exec babel-node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

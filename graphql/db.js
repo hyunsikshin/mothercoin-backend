@@ -1,11 +1,4 @@
-let data = [
-  {
-    id: 0,
-    address: 'error',
-    domain: 'hyunsik',
-    email: 'hyunsik@gmail.com',
-  },
-];
+import { prisma } from '../generated/prisma-client';
 
 export const getUsers = () => data;
 
