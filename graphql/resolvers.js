@@ -12,7 +12,7 @@ const resolvers = {
         case 'address':
           return context.prisma.user({ address: args.address });
         case 'email':
-          return context.prisma.user({ address: args.email });
+          return context.prisma.user({ email: args.email });
         default:
           return null;
       }
