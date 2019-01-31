@@ -21,8 +21,15 @@ import resolvers from './graphql/resolvers';
 const server = new GraphQLServer({
   typeDefs: './graphql/schema.graphql',
   resolvers,
-  context: {
-    prisma,
+  context: req => {
+    if (req.request.headers.key === `x-mothercoingustlrwkdwkd`) {
+      return {
+        ...req,
+        prisma,
+      };
+    } else {
+      return null;
+    }
   },
 });
 
