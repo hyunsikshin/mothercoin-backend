@@ -10,4 +10,6 @@ COPY . .
 
 EXPOSE 4000
 
+CMD prisma deploy
+CMD prisma generate
 CMD yarn start

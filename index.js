@@ -33,10 +33,6 @@ const server = new GraphQLServer({
   },
 });
 
-const options = {
-  port: 8080,
-};
-
 server.start(() => {
   console.log('server is running');
 });

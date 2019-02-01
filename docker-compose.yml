@@ -4,6 +4,9 @@ services:
     image: mothercoin-backend
     ports:
       - '4000:4000'
+    depends_on:
+      - prisma
+      - postgres
   prisma:
     container_name: prisma
     image: prismagraphql/prisma:1.25
@@ -21,6 +24,8 @@ services:
             user: prisma
             password: prisma
             migrations: true
+    depends_on:
+      - postgres
   postgres:
     image: postgres:10.5
     restart: always
