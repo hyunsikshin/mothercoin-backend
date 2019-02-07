@@ -6,10 +6,11 @@ COPY package*.json ./
 
 RUN yarn
 
+CMD prisma deploy
+CMD prisma generate
+
 COPY . .
 
 EXPOSE 4000
 
-CMD prisma deploy
-CMD prisma generate
 CMD yarn start
