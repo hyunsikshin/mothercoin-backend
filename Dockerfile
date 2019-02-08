@@ -4,10 +4,10 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN yarn
+RUN yarn && yarn global add prisma && prisma deploy && prisma generate
 
 COPY . .
 
-EXPOSE 4000
-
 CMD yarn start
+
+EXPOSE 4000
