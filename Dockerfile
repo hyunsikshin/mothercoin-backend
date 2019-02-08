@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 
 COPY package*.json ./
 
-RUN yarn && yarn global add prisma && prisma deploy && prisma generate
+RUN yarn
 
 COPY . .
 
